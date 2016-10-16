@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-
+		public GameObject gracz;
         
         private void Start()
         {
@@ -36,18 +36,33 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private void Update()
         {
             if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+            {	
+				if (gracz.name=="gracz2"){
+					m_Jump = CrossPlatformInputManager.GetButtonDown("Jump2");
+				}
+				if (gracz.name=="gracz"){
+					m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+				}
+                
             }
         }
 
 
         // Fixed update is called in sync with physics
         private void FixedUpdate()
-        {
+		{	
+			float h = CrossPlatformInputManager.GetAxis("Horizontal");
+			float v = CrossPlatformInputManager.GetAxis("Vertical");
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
+			if (gracz.name=="gracz"){
+				h = CrossPlatformInputManager.GetAxis("Horizontal");
+				v = CrossPlatformInputManager.GetAxis("Vertical");
+			}
+			if (gracz.name=="gracz2"){
+				h = CrossPlatformInputManager.GetAxis("Horizontal2");
+				v = CrossPlatformInputManager.GetAxis("Vertical2");
+			}
+            
             bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character
