@@ -160,7 +160,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!1 &390116750
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ GameObject:
   - 64: {fileID: 390116752}
   - 23: {fileID: 390116751}
   m_Layer: 0
-  m_Name: Sciana1 (1)
+  m_Name: Sciana2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,7 +239,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 11
 --- !u!1001 &583929388
 Prefab:
   m_ObjectHideFlags: 0
@@ -307,7 +307,7 @@ GameObject:
   - 124: {fileID: 976451349}
   - 81: {fileID: 976451348}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: Camera Gracz 1
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,7 +380,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 43, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &984926608
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 17
 --- !u!1 &1045690082
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +538,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
 --- !u!1 &1131133522
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +616,7 @@ GameObject:
   - 114: {fileID: 1244402846}
   - 54: {fileID: 1244402851}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Gracz 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,11 +634,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pilka: {fileID: 1446066175}
+  boisko: {fileID: 0}
   isComputerPlayer: 0
-  ogranicznikPolaLeft: 237
-  ogranicznikPolaRight: 245
-  ogranicznikPolaTop: 260
-  ogranicznikPolaBottom: 252
+  ogranicznikPolaLeft: 236
+  ogranicznikPolaRight: 246
+  ogranicznikPolaTop: 261
+  ogranicznikPolaBottom: 251
 --- !u!23 &1244402847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -695,12 +696,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1244402844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 241, y: 6.62, z: 256.09}
+  m_LocalPosition: {x: 241.02, y: 6.62, z: 256.09}
   m_LocalScale: {x: 2, y: 1.6, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
 --- !u!54 &1244402851
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -729,7 +730,7 @@ GameObject:
   - 124: {fileID: 1363295744}
   - 81: {fileID: 1363295743}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera Gracz 2
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +803,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 43, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!1 &1446066169
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,9 +911,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b40209b4622a6748ac818ccc5d62597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   punktyGracz1: 0
   punktyGracz2: 0
   waitForStart: 1
+  x: 0
+  z: 0
 --- !u!1 &1515546938
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +929,7 @@ GameObject:
   - 136: {fileID: 1515546940}
   - 23: {fileID: 1515546939}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Slupek1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,7 +996,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 14
 --- !u!1 &1618603084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1009,7 @@ GameObject:
   - 64: {fileID: 1618603086}
   - 23: {fileID: 1618603085}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Boisko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1071,7 +1075,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1774772047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1090,7 @@ GameObject:
   - 114: {fileID: 1774772050}
   - 54: {fileID: 1774772048}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: Gracz 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1119,11 +1123,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pilka: {fileID: 1446066175}
+  boisko: {fileID: 0}
   isComputerPlayer: 0
-  ogranicznikPolaLeft: 237
-  ogranicznikPolaRight: 245
-  ogranicznikPolaTop: 250
-  ogranicznikPolaBottom: 242
+  ogranicznikPolaLeft: 236
+  ogranicznikPolaRight: 246
+  ogranicznikPolaTop: 251
+  ogranicznikPolaBottom: 241
 --- !u!23 &1774772051
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1180,12 +1185,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1774772047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 241, y: 6.62, z: 246.66}
+  m_LocalPosition: {x: 241.26, y: 6.62, z: 245.89}
   m_LocalScale: {x: 2, y: 1.6, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 9
 --- !u!1 &1802862429
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,7 +1269,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 16
 --- !u!1 &1840604292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1282,7 @@ GameObject:
   - 64: {fileID: 1840604294}
   - 23: {fileID: 1840604293}
   m_Layer: 0
-  m_Name: Sciana1 (3)
+  m_Name: Sciana4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1348,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 13
 --- !u!1 &1890889390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1440,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 7
 --- !u!1 &1891023293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,7 +1453,7 @@ GameObject:
   - 64: {fileID: 1891023295}
   - 23: {fileID: 1891023294}
   m_Layer: 0
-  m_Name: Sciana1 (2)
+  m_Name: Sciana3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1514,7 +1519,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 12
 --- !u!1 &1895239192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1532,7 @@ GameObject:
   - 136: {fileID: 1895239194}
   - 23: {fileID: 1895239193}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Slupek2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1594,4 +1599,4 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 15

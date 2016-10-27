@@ -3,13 +3,17 @@ using System.Collections;
 
 public class pilka : MonoBehaviour {
 
-	private Rigidbody rb;
-	private float ground = 5.31f;
+	public Rigidbody rb;
+	private float ground = 6.01f;
 
 	public int punktyGracz1 = 0;
 	public int punktyGracz2 = 0;
 
 	public bool waitForStart = true;
+
+
+	public float x = 0.0f;
+	public float z = 0.0f;
 
 	private Vector3 gracz1startPos = new Vector3 (240.0f, 10.0f, 255.0f);
 
@@ -20,6 +24,10 @@ public class pilka : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		x = transform.position.x;
+		z = transform.position.z;
+
 		if (isGrounded()) {
 			transform.position = new Vector3(gracz1startPos.x,gracz1startPos.y,gracz1startPos.z);
 			waitForStart = true;
@@ -41,7 +49,7 @@ public class pilka : MonoBehaviour {
 
 
 	bool isGrounded(){
-		if (transform.position.y < ground + 1.10) {
+		if (transform.position.y < ground + 0.10) {
 			return true;
 		}
 		return false;

@@ -3,152 +3,168 @@ using System.Collections;
 
 public class ruch : MonoBehaviour {
 
-	//Obiekt odpowiedzialny za ruch gracza.
-	//private CharacterController characterControler;
 	private Rigidbody rb;
 	public pilka pilka;
+	public GameObject boisko;
 
-	private float predkoscPoruszania = 9.0f;
-	private float wysokoscSkoku = 10.5f;
-	private float aktualnaWysokoscSkoku = 0f;
-	private float predkoscBiegania = 7.0f;
-
-	private float speed = 3.0f;
-	private float polowaBoiskaZ = 251;
-
+	private float playerSpeed = 6.0f;
+	private float jumpHeight = 10.0f;
 	public bool isComputerPlayer = false;
 
-	private float ziemia = 6.62f;
-	private float jumpSpeed = 0.0f;
-
-
-	public float ogranicznikPolaLeft;
-	public float ogranicznikPolaRight;
-	public float ogranicznikPolaTop;
-	public float ogranicznikPolaBottom;
+	private float ziemia;
+	private float ogranicznikPolaLeft;
+	private float ogranicznikPolaRight;
+	private float ogranicznikPolaTop;
+	private float ogranicznikPolaBottom;
+	private int graczPrzedSiatka = -1;
 
 	void Start () {
 		rb = GetComponent<Rigidbody>();
+
+		ogranicznikPolaLeft = boisko.transform.position.x - 5;
+		ogranicznikPolaRight =boisko.transform.position.x + 5;
+
+		if (transform.position.z < boisko.transform.position.z) {
+			graczPrzedSiatka  = 1;
+		}
+
+		if (graczPrzedSiatka == 1) {
+			ogranicznikPolaTop = boisko.transform.position.z;
+			ogranicznikPolaBottom = boisko.transform.position.z - 10;
+		} else {
+			ogranicznikPolaTop = boisko.transform.position.z + 10 ;
+			ogranicznikPolaBottom = boisko.transform.position.z;
+		}
+
+		ziemia = boisko.transform.position.y + 1.6f;
 	}
 
 
 	void Update() {
 
 		if (isComputerPlayer == false) {
+			//STEROWANIE RECZNE
 
-			//sterownie gracza
-
-			float rochPrzodTyl = Input.GetAxis ("Vertical") * predkoscPoruszania;
-			float rochLewoPrawo = Input.GetAxis ("Horizontal") * predkoscPoruszania;
-
-
-			if (transform.position.z > polowaBoiskaZ) {
+			float rochPrzodTyl = Input.GetAxis ("Vertical") * playerSpeed * 1.5f;
+			float rochLewoPrawo = Input.GetAxis ("Horizontal")  * playerSpeed * 1.5f;
+		
+			//odwrocone sterownie dla gracza po drugiej stronie
+			if (graczPrzedSiatka == -1) {
 				rochPrzodTyl = rochPrzodTyl * -1.0f;
 				rochLewoPrawo = rochLewoPrawo*-1.0f;
 			}
-
-			if (rb.position.x < ogranicznikPolaLeft + 1.1f && rochLewoPrawo < 0) {
-				rochLewoPrawo = 0;
-			}
-			if (rb.position.x > ogranicznikPolaRight - 1.1f && rochLewoPrawo > 0) {
-				rochLewoPrawo = 0;
-			}
-			if (rb.position.z > ogranicznikPolaTop -1.1f  && rochPrzodTyl > 0) {
-				rochPrzodTyl = 0;
-			}
-			if (rb.position.z < ogranicznikPolaBottom + 1.1f && rochPrzodTyl < 0) {
-				rochPrzodTyl = 0;
-			}
-
-			aktualnaWysokoscSkoku = 0;
-
-
-			if (Input.GetButton ("Jump")) {
-				if (rb.position.y < ziemia + 0.5) {
-					jumpSpeed = 10;
-				} else {
-					jumpSpeed = rb.velocity.y + Physics.gravity.y * Time.deltaTime * 1.2f;
-				}
-			} else {
-				jumpSpeed = rb.velocity.y + Physics.gravity.y * Time.deltaTime * 2.0f;
-			}
-
 				
-			//jumpSpeed *= 1.5f;
+			rochLewoPrawo = getLimiters (rochLewoPrawo,true);
+			rochPrzodTyl = getLimiters (rochPrzodTyl, false);
+				
+			float jumpSpeed = getJump (Input.GetButton ("Jump"));
+
 			Vector3 ruch = new Vector3 (rochLewoPrawo, jumpSpeed, rochPrzodTyl);
 
 			rb.velocity = ruch;
-
-			//ruch = transform.rotation * ruch;
-
-			//characterControler.Move (ruch * Time.deltaTime);
 		} else {
-
-			//komputer
+			//KOMPUTER
 
 			float celX = 0.0f;
 			float celZ = 0.0f;
 
-			//int graczPrzedSiatka = -1;
-			//int pilkaPrzedSiatka = -1;
-			//
-			//if (transform.position.z < polowaBoiskaZ) {
-			//	graczPrzedSiatka  = 1;
-			//}
-			//if (pilka.transform.position.z < polowaBoiskaZ) {
-			//	pilkaPrzedSiatka  = 1;
-			//}
+			int pilkaPrzedSiatka = -1;
 
-
-			//if (graczPrzedSiatka * pilkaPrzedSiatka == 1) {
-				//celX = pilka.transform.position.x;
-				//celZ = pilka.transform.position.z;
-			//} else {
+			if (pilka.transform.position.z < boisko.transform.position.z) {
+				pilkaPrzedSiatka  = 1;
+			}
+				
+			if (graczPrzedSiatka * pilkaPrzedSiatka == 1) {
 				celX = pilka.transform.position.x;
-				celZ = pilka.transform.position.z;
-			//}
-		
-			//Vector ruch = new Vector3(celX - transform.position.x,0,0);
-			//Vector3 ruch;
-			//if (celX > transform.position.x) {
-			//	
-			//} else {
-			//	ruch = new Vector3(celZ - transform.position.z,0,0);
-			//}
+				if (graczPrzedSiatka == 1) {
+					celZ = pilka.transform.position.z - 1.1f;
+				} else {
+					celZ = pilka.transform.position.z + 1.1f;
+				}
+			} else {
+				if (graczPrzedSiatka == 1) {
+					celZ = boisko.transform.position.z - 6.0f;
+				} else {
+					celZ = boisko.transform.position.z + 6.0f;
+				}
+				celX = boisko.transform.position.x;
+			}
 
+			float actualSpeed = playerSpeed * Time.deltaTime;
+			float moveLeftRight = getMoveFromTo (rb.position.x, celX, actualSpeed) / Time.deltaTime;
+			float moveTopBottom = getMoveFromTo (rb.position.z, celZ, actualSpeed) / Time.deltaTime;
 
+			bool virtualJumpButton = false;
 
-			Vector3 ruch = new Vector3 (getMoveFromTo(rb.position.x,celX,30.0f), 0.0f, getMoveFromTo(rb.position.z,celZ,30.0f));
+			if (graczPrzedSiatka * pilkaPrzedSiatka == 1) {
+				if (moveLeftRight != actualSpeed && moveLeftRight != -actualSpeed && moveTopBottom != actualSpeed && moveTopBottom != -actualSpeed) {
+					//The player is under the ball and can Jump
+					virtualJumpButton = true;
+				}
+			}
+
+			float jumpSpeed = getJump(virtualJumpButton);
+
+			moveLeftRight = getLimiters (moveLeftRight, true);
+			moveTopBottom = getLimiters (moveTopBottom, false);
+
+			Vector3 ruch = new Vector3 (moveLeftRight, jumpSpeed ,moveTopBottom);
 			rb.velocity = ruch;
-
-			//transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z+);
-			//c/haracterControler.Move (ruch);
-
 		}
 	}
 
 	void OnTriggerEnter(Collider other){
-		//other.gameObject.SetActive (false);
 		pilka.waitForStart = false;
 	}
 
 
 	private float getMoveFromTo(float start,float end,float speedT){
 		if (start > end) {
-			if (start - end > speedT) {
-				//return - speedT;
-				return 0;
+			if ((start - end) > speedT) {
+				return - speedT;
 			} else {
 				return end - start;
 			}
 		} else {
-			if (end - start > speedT) {
-				//return speedT;
-				return 0;
+			if ((end - start) > speedT) {
+				return speedT;
 			} else {
 				return - start + end;
 			}
 		}
+	}
+		
+	private float getJump(bool buttomJump){
+		float jumpSpeed = 0.0f;
+		if (buttomJump == true) {
+			if (rb.position.y < ziemia + 0.5) {
+				jumpSpeed = jumpHeight;
+			} else {
+				jumpSpeed = rb.velocity.y + Physics.gravity.y * Time.deltaTime * 1.2f;
+			}
+		} else {
+			jumpSpeed = rb.velocity.y + Physics.gravity.y * Time.deltaTime * 2.0f;
+		}
+		return jumpSpeed;
+	}
+
+	private float getLimiters(float speed, bool isLeftRight){
+		if (isLeftRight) {
+			if (rb.position.x < ogranicznikPolaLeft + 1.2f && speed < 0) {
+				return 0;
+			}
+			if (rb.position.x > ogranicznikPolaRight - 1.2f && speed > 0) {
+				return 0;
+			}
+		} else {
+			if (rb.position.z > ogranicznikPolaTop -1.2f  && speed > 0) {
+				return 0;
+			}
+			if (rb.position.z < ogranicznikPolaBottom + 1.2f && speed < 0) {
+				return 0;
+			}
+		}
+		return speed;
 	}
 
 }
