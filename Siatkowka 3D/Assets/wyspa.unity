@@ -361,7 +361,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
@@ -614,7 +614,6 @@ GameObject:
   - 136: {fileID: 1244402848}
   - 23: {fileID: 1244402847}
   - 114: {fileID: 1244402846}
-  - 143: {fileID: 1244402845}
   - 54: {fileID: 1244402851}
   m_Layer: 0
   m_Name: Capsule
@@ -623,23 +622,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!143 &1244402845
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1244402844}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1244402846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,6 +635,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pilka: {fileID: 1446066175}
   isComputerPlayer: 0
+  ogranicznikPolaLeft: 237
+  ogranicznikPolaRight: 245
+  ogranicznikPolaTop: 260
+  ogranicznikPolaBottom: 252
 --- !u!23 &1244402847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -797,7 +783,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
@@ -810,10 +796,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1363295742}
-  m_LocalRotation: {x: 0.11637948, y: -0, z: -0, w: 0.99320483}
-  m_LocalPosition: {x: 241.17, y: 14.34, z: 221.9}
+  m_LocalRotation: {x: 0.3640754, y: -0, z: -0, w: 0.93136954}
+  m_LocalPosition: {x: 240.4, y: 18.66, z: 236.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 13.311001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 42.698, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1098,7 +1084,6 @@ GameObject:
   - 136: {fileID: 1774772052}
   - 23: {fileID: 1774772051}
   - 114: {fileID: 1774772050}
-  - 143: {fileID: 1774772049}
   - 54: {fileID: 1774772048}
   m_Layer: 0
   m_Name: Capsule (1)
@@ -1122,23 +1107,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!143 &1774772049
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1774772047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1774772050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1152,6 +1120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pilka: {fileID: 1446066175}
   isComputerPlayer: 0
+  ogranicznikPolaLeft: 237
+  ogranicznikPolaRight: 245
+  ogranicznikPolaTop: 250
+  ogranicznikPolaBottom: 242
 --- !u!23 &1774772051
 MeshRenderer:
   m_ObjectHideFlags: 0
