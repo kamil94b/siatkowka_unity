@@ -2,35 +2,47 @@
 using System.Collections;
 
 public class pilka : MonoBehaviour {
-
-	public Rigidbody rb;
-	private float ground = 6.01f;
+	public GameObject boisko;
+	public GameObject wynik;
 
 	public int punktyGracz1 = 0;
 	public int punktyGracz2 = 0;
 
+	public int odbiciaGracz1 = 0;
+	public int odbiciaGracz2 = 0;
+
 	public bool waitForStart = true;
 
-
-	public float x = 0.0f;
-	public float z = 0.0f;
-
-	private Vector3 gracz1startPos = new Vector3 (240.0f, 10.0f, 255.0f);
+	//variable initialized on start
+	private Rigidbody rb;
+	private float ground;
+	private Vector3 gracz1startPos;
+	private Vector3 gracz2startPos;
+	//AudioSource
+	AudioSource s_whistle;
+	AudioSource s_wood;
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent <Rigidbody>();
+		gracz1startPos = new Vector3 (boisko.transform.position.x, boisko.transform.position.y + 6.0f, boisko.transform.position.z + 6.0f);
+		gracz2startPos = new Vector3 (boisko.transform.position.x, boisko.transform.position.y + 6.0f, boisko.transform.position.z - 6.0f);
+		ground = boisko.transform.position.y + 1.0f;
+
+		s_whistle = GetComponents<AudioSource> ()[1];
+		s_wood = GetComponents<AudioSource> ()[0];
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		x = transform.position.x;
-		z = transform.position.z;
-
 		if (isGrounded()) {
-			transform.position = new Vector3(gracz1startPos.x,gracz1startPos.y,gracz1startPos.z);
-			waitForStart = true;
+			s_whistle.Play ();
+			if (transform.position.z < boisko.transform.position.z) {
+				addPoint (1);
+			} else {
+				addPoint (2);
+			}
 		}
 
 
@@ -46,13 +58,53 @@ public class pilka : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter (Collision col){
+		s_wood.Play ();
+		if(col.gameObject.name=="Gracz 1"){
+			odbiciaGracz2 = 0;
+			odbiciaGracz1++;
+			if (odbiciaGracz1 > 3) {
+				odbiciaGracz1 = 0;
+				s_whistle.Play ();
+				addPoint (2);
+			}
+		}
+		if(col.gameObject.name=="Gracz 2"){
+			odbiciaGracz1 = 0;
+			odbiciaGracz2++;
+			if (odbiciaGracz2 > 3) {
+				odbiciaGracz2 = 0;
+				s_whistle.Play ();
+				addPoint (1);
+			}
+		}
 
+	}
 
 	bool isGrounded(){
 		if (transform.position.y < ground + 0.10) {
 			return true;
 		}
 		return false;
+	}
+
+
+	private void addPoint(int playerNum){
+		if (playerNum == 1) {
+			punktyGracz1++;
+			transform.position = gracz1startPos;
+		} else {
+			punktyGracz2++;
+			transform.position = gracz2startPos;
+
+		}
+		waitForStart = true;
+		showPoitns ();
+	}
+
+	private void showPoitns(){
+		TextMesh tm = wynik.GetComponent<TextMesh> ();
+		tm.text = punktyGracz1+" : "+punktyGracz2;
 	}
 		
 }

@@ -91,8 +91,15 @@ public class ruch : MonoBehaviour {
 			}
 
 			float actualSpeed = playerSpeed * Time.deltaTime;
-			float moveLeftRight = getMoveFromTo (rb.position.x, celX, actualSpeed) / Time.deltaTime;
-			float moveTopBottom = getMoveFromTo (rb.position.z, celZ, actualSpeed) / Time.deltaTime;
+
+			float moveLeftRight = 0.0f;
+			float moveTopBottom= 0.0f;
+
+			if (Time.deltaTime != 0) {
+				moveLeftRight = getMoveFromTo (rb.position.x, celX, actualSpeed) / Time.deltaTime;
+				moveTopBottom = getMoveFromTo (rb.position.z, celZ, actualSpeed) / Time.deltaTime;
+			}
+
 
 			bool virtualJumpButton = false;
 
