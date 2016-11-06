@@ -3,7 +3,10 @@ using System.Collections;
 
 public class pilka : MonoBehaviour {
 	public GameObject boisko;
-	public GameObject wynik;
+	public GameObject wynik_P1;
+	public GameObject wynik_P2;
+	public GameObject wynik_P1w;
+	public GameObject wynik_P2w;
 
 	public int punktyGracz1 = 0;
 	public int punktyGracz2 = 0;
@@ -103,8 +106,14 @@ public class pilka : MonoBehaviour {
 	}
 
 	private void showPoitns(){
-		TextMesh tm = wynik.GetComponent<TextMesh> ();
-		tm.text = punktyGracz1+" : "+punktyGracz2;
+		TextMesh tm1 = wynik_P1.GetComponent<TextMesh> ();
+		TextMesh tm2 = wynik_P2.GetComponent<TextMesh> ();
+		TextMesh tm1w = wynik_P1w.GetComponent<TextMesh> ();
+		TextMesh tm2w = wynik_P2w.GetComponent<TextMesh> ();
+		tm1.text = punktyGracz1 + "";
+		tm2.text = punktyGracz2 + "";
+		tm1w.text = punktyGracz1 + "";
+		tm2w.text = punktyGracz2 + "";
 	}
 		
 }

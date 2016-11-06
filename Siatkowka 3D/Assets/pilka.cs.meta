@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 8b40209b4622a6748ac818ccc5d62597
-timeCreated: 1476784482
+timeCreated: 1478439392
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - boisko: {fileID: 1000014023251918, guid: 0b43a02d441882741a88c198a8a877ae, type: 2}
+  - wynik_P1: {fileID: 1000011889157692, guid: dd031ea360fc87a44a328023e227293b, type: 2}
+  - wynik_P2: {fileID: 1000013977369658, guid: f2e86029a2ab76c4d96eb9a6b0dcf491, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

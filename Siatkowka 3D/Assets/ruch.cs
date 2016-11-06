@@ -6,6 +6,7 @@ public class ruch : MonoBehaviour {
 	private Rigidbody rb;
 	public pilka pilka;
 	public GameObject boisko;
+	public GameObject gracz;
 
 	private float actualScale = 1.6f;
 	private float actualScaleCel= 1.6f;
@@ -46,11 +47,17 @@ public class ruch : MonoBehaviour {
 	void Update() {
 
 		if (isComputerPlayer == false) {
+			float rochPrzodTyl = 0;
+			float rochLewoPrawo = 0;
 			//STEROWANIE RECZNE
-		
-			float rochPrzodTyl = Input.GetAxis ("Vertical") * playerSpeed * 1.5f;
-			float rochLewoPrawo = Input.GetAxis ("Horizontal")  * playerSpeed * 1.5f;
-		
+			if (gracz.name == "Gracz 1") {
+				rochPrzodTyl = Input.GetAxis ("Vertical") * playerSpeed * 1.5f;
+				rochLewoPrawo = Input.GetAxis ("Horizontal") * playerSpeed * 1.5f;
+			} else {
+				rochPrzodTyl = Input.GetAxis ("Vertical2") * playerSpeed * 1.5f;
+				rochLewoPrawo = Input.GetAxis ("Horizontal2") * playerSpeed * 1.5f;
+			}
+
 			//odwrocone sterownie dla gracza po drugiej stronie
 			if (graczPrzedSiatka == -1) {
 				rochPrzodTyl = rochPrzodTyl * -1.0f;
@@ -59,9 +66,12 @@ public class ruch : MonoBehaviour {
 				
 			rochLewoPrawo = getLimiters (rochLewoPrawo,true);
 			rochPrzodTyl = getLimiters (rochPrzodTyl, false);
-				
-			float jumpSpeed = getJump (Input.GetButton ("Jump"));
-
+			float jumpSpeed = 0;	
+			if (gracz.name == "Gracz 1") {
+				jumpSpeed = getJump (Input.GetButton ("Jump"));
+			} else {
+				jumpSpeed = getJump (Input.GetButton ("Jump2"));
+			}
 			Vector3 ruch = new Vector3 (rochLewoPrawo, jumpSpeed, rochPrzodTyl);
 
 			bool isMoving = true;
