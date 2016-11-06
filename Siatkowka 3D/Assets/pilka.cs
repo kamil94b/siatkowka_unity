@@ -101,6 +101,8 @@ public class pilka : MonoBehaviour {
 			transform.position = gracz2startPos;
 
 		}
+		odbiciaGracz1 = 0;
+		odbiciaGracz2 = 0;
 		waitForStart = true;
 		showPoitns ();
 	}
