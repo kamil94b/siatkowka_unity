@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2087df5c6b760743a30ff8e66a28cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pilka: {fileID: 0}
+  pilka: {fileID: 1000013584835500, guid: 232a8ca9dde007a47814fb6fff1935b2, type: 2}
 --- !u!135 &135000011600664568
 SphereCollider:
   m_ObjectHideFlags: 1
