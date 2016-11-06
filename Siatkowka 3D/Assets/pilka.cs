@@ -8,11 +8,26 @@ public class pilka : MonoBehaviour {
 	public GameObject wynik_P1w;
 	public GameObject wynik_P2w;
 
+	public GameObject set_P1;
+	public GameObject set_P2;
+	public GameObject set_P1w;
+	public GameObject set_P2w;
+
+	public GameObject wynik1;
+	public GameObject wynik2;
+
 	public int punktyGracz1 = 0;
 	public int punktyGracz2 = 0;
 
 	public int odbiciaGracz1 = 0;
 	public int odbiciaGracz2 = 0;
+
+	public int numerSeta = 0;
+	public int setyGracz1 = 0;
+	public int setyGracz2 = 0;
+
+
+
 
 	public bool waitForStart = true;
 
@@ -101,6 +116,39 @@ public class pilka : MonoBehaviour {
 			transform.position = gracz2startPos;
 
 		}
+
+		if ((punktyGracz1 >= 25 || punktyGracz2 >= 25) && (punktyGracz1-punktyGracz2 >= 2 || punktyGracz2-punktyGracz1 >= 2) && numerSeta < 5)
+		{	
+			if (punktyGracz1 > punktyGracz2) {
+			
+				setyGracz1 += 1;
+			} else {
+				setyGracz2 += 1;
+			}
+
+			punktyGracz1 = 0;
+			punktyGracz2 = 0;
+			numerSeta += 1;
+			}
+
+		if ((punktyGracz1 >= 15 || punktyGracz2 >= 15) && (punktyGracz1-punktyGracz2 >= 2 || punktyGracz2-punktyGracz1 >= 2) && numerSeta == 5)
+		{	
+			if (punktyGracz1 > punktyGracz2) {
+
+				setyGracz1 += 1;
+			} else {
+				setyGracz2 += 1;
+			}
+
+			punktyGracz1 = 0;
+			punktyGracz2 = 0;
+			numerSeta += 1;
+		}
+
+
+
+			
+
 		odbiciaGracz1 = 0;
 		odbiciaGracz2 = 0;
 		waitForStart = true;
@@ -108,14 +156,56 @@ public class pilka : MonoBehaviour {
 	}
 
 	private void showPoitns(){
-		TextMesh tm1 = wynik_P1.GetComponent<TextMesh> ();
-		TextMesh tm2 = wynik_P2.GetComponent<TextMesh> ();
-		TextMesh tm1w = wynik_P1w.GetComponent<TextMesh> ();
-		TextMesh tm2w = wynik_P2w.GetComponent<TextMesh> ();
-		tm1.text = punktyGracz1 + "";
-		tm2.text = punktyGracz2 + "";
-		tm1w.text = punktyGracz1 + "";
-		tm2w.text = punktyGracz2 + "";
+		
+
+			TextMesh tm1 = wynik_P1.GetComponent<TextMesh> ();
+			TextMesh tm2 = wynik_P2.GetComponent<TextMesh> ();
+			TextMesh tm1w = wynik_P1w.GetComponent<TextMesh> ();
+			TextMesh tm2w = wynik_P2w.GetComponent<TextMesh> ();
+
+
+			TextMesh set1 = set_P1.GetComponent<TextMesh> ();
+			TextMesh set2 = set_P2.GetComponent<TextMesh> ();
+			TextMesh set1w = set_P1w.GetComponent<TextMesh> ();
+			TextMesh set2w = set_P2w.GetComponent<TextMesh> ();
+
+			TextMesh wynik11 = wynik1.GetComponent<TextMesh> ();
+			TextMesh wynik22 = wynik2.GetComponent<TextMesh> ();
+
+		if (setyGracz2 >= 3 || setyGracz1 >= 3) {
+			if (setyGracz1 > setyGracz2) {
+				wynik11.text = "Wygral Gracz 1";
+				wynik22.text = "Wygral Gracz 1";
+			} else {
+				wynik11.text = "Wygral Gracz 2";
+				wynik22.text = "Wygral Gracz 2";
+			
+			}
+			tm1.text ="";
+			tm2.text ="";
+			tm1w.text ="";
+			tm2w.text ="";
+			set1.text ="";
+			set2.text ="";
+			set1w.text ="";
+			set2w.text ="";
+			setyGracz1 = 0;
+			setyGracz2 = 0;
+
+		}
+		else{
+
+			tm1.text = punktyGracz1 + "";
+			tm2.text = punktyGracz2 + "";
+			tm1w.text = punktyGracz1 + "";
+			tm2w.text = punktyGracz2 + "";
+			set1.text = setyGracz1 + "";
+			set2.text = setyGracz2 + "";
+			set1w.text = setyGracz1 + "";
+			set2w.text = setyGracz2 + "";
+			wynik11.text = ":";
+			wynik22.text = ":";
+		}
 	}
 		
 }
