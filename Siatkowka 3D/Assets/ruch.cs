@@ -7,11 +7,15 @@ public class ruch : MonoBehaviour {
 	public pilka pilka;
 	public GameObject boisko;
 
+	private float actualScale = 1.6f;
+	private float actualScaleCel= 1.6f;
+
+	private float moveTime = 0;
+
 	private float playerSpeed = 6.0f;
 	private float jumpHeight = 10.0f;
 	public bool isComputerPlayer = false;
 
-	private float ziemia;
 	private float ogranicznikPolaLeft;
 	private float ogranicznikPolaRight;
 	private float ogranicznikPolaTop;
@@ -35,8 +39,7 @@ public class ruch : MonoBehaviour {
 			ogranicznikPolaTop = boisko.transform.position.z + 10 ;
 			ogranicznikPolaBottom = boisko.transform.position.z;
 		}
-
-		ziemia = boisko.transform.position.y + 1.6f;
+			
 	}
 
 
@@ -44,7 +47,7 @@ public class ruch : MonoBehaviour {
 
 		if (isComputerPlayer == false) {
 			//STEROWANIE RECZNE
-
+		
 			float rochPrzodTyl = Input.GetAxis ("Vertical") * playerSpeed * 1.5f;
 			float rochLewoPrawo = Input.GetAxis ("Horizontal")  * playerSpeed * 1.5f;
 		
@@ -60,6 +63,17 @@ public class ruch : MonoBehaviour {
 			float jumpSpeed = getJump (Input.GetButton ("Jump"));
 
 			Vector3 ruch = new Vector3 (rochLewoPrawo, jumpSpeed, rochPrzodTyl);
+
+			bool isMoving = true;
+			if (rochLewoPrawo == 0 && rochPrzodTyl == 0) {
+				isMoving = false;
+			}
+			bool isJump = true;
+			if (rb.position.y < getZiemia() + 0.2) {
+				isJump = false;
+			}
+
+			transform.localScale = getActualScale (isMoving,isJump);
 
 			rb.velocity = ruch;
 		} else {
@@ -91,13 +105,21 @@ public class ruch : MonoBehaviour {
 			}
 
 			float actualSpeed = playerSpeed * Time.deltaTime;
-			float moveLeftRight = getMoveFromTo (rb.position.x, celX, actualSpeed) / Time.deltaTime;
-			float moveTopBottom = getMoveFromTo (rb.position.z, celZ, actualSpeed) / Time.deltaTime;
+
+			float moveLeftRight = 0.0f;
+			float moveTopBottom= 0.0f;
+
+			if (Time.deltaTime != 0) {
+				moveLeftRight = getMoveFromTo (rb.position.x, celX, actualSpeed) / Time.deltaTime;
+				moveTopBottom = getMoveFromTo (rb.position.z, celZ, actualSpeed) / Time.deltaTime;
+			}
+
 
 			bool virtualJumpButton = false;
 
 			if (graczPrzedSiatka * pilkaPrzedSiatka == 1) {
-				if (moveLeftRight != actualSpeed && moveLeftRight != -actualSpeed && moveTopBottom != actualSpeed && moveTopBottom != -actualSpeed) {
+				float actualSpeed2 = actualSpeed / Time.deltaTime;
+				if (moveLeftRight != actualSpeed2 && moveLeftRight != -actualSpeed2 && moveTopBottom != actualSpeed2 && moveTopBottom != -actualSpeed2) {
 					//The player is under the ball and can Jump
 					virtualJumpButton = true;
 				}
@@ -110,6 +132,17 @@ public class ruch : MonoBehaviour {
 
 			Vector3 ruch = new Vector3 (moveLeftRight, jumpSpeed ,moveTopBottom);
 			rb.velocity = ruch;
+
+			bool isMoving = true;
+			if (moveLeftRight == 0 && moveTopBottom == 0) {
+				isMoving = false;
+			}
+			bool isJump = true;
+			if (rb.position.y < getZiemia() + 0.2) {
+				isJump = false;
+			}
+
+			transform.localScale = getActualScale (isMoving,isJump);
 		}
 	}
 
@@ -137,7 +170,7 @@ public class ruch : MonoBehaviour {
 	private float getJump(bool buttomJump){
 		float jumpSpeed = 0.0f;
 		if (buttomJump == true) {
-			if (rb.position.y < ziemia + 0.5) {
+			if (rb.position.y < getZiemia() + 0.5) {
 				jumpSpeed = jumpHeight;
 			} else {
 				jumpSpeed = rb.velocity.y + Physics.gravity.y * Time.deltaTime * 1.2f;
@@ -165,6 +198,36 @@ public class ruch : MonoBehaviour {
 			}
 		}
 		return speed;
+	}
+
+
+	private Vector3 getActualScale(bool isMoving,bool isJump){
+
+		if (isJump == true) {
+			actualScaleCel = 1.8f;
+		} else {
+			if (isMoving == true && actualScaleCel == 1.6f) {
+				moveTime += Time.deltaTime;
+				actualScale = 1.6f + 0.2f * Mathf.Sin (moveTime * 20);
+				return new Vector3 (2.0f, actualScale, 2.0f);
+			} else {
+				moveTime = 0;
+			}
+			if (actualScaleCel == 1.8f) {
+				actualScaleCel = 1.3f;
+			}
+			if (actualScaleCel == 1.3f && actualScale < 1.35f) {
+				actualScaleCel = 1.6f;	
+			}
+		}
+		actualScale += (actualScaleCel - actualScale) / 2.0f;
+
+		return new Vector3 (2.0f, actualScale, 2.0f);
+
+	}
+
+	private float getZiemia(){
+		return boisko.transform.position.y + transform.localScale.y;
 	}
 
 }
