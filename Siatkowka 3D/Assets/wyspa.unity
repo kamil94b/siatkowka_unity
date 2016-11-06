@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43681014, g: 0.48440832, b: 0.56459594, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -186,6 +186,11 @@ Prefab:
       propertyPath: boisko
       value: 
       objectReference: {fileID: 1618603084}
+    - target: {fileID: 114000011345525996, guid: ea2f006a29695104f8a8b7ceadae9d8a,
+        type: 2}
+      propertyPath: gracz
+      value: 
+      objectReference: {fileID: 1224133188}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea2f006a29695104f8a8b7ceadae9d8a, type: 2}
   m_IsPrefabParent: 0
@@ -302,6 +307,11 @@ Prefab:
       propertyPath: boisko
       value: 
       objectReference: {fileID: 1618603084}
+    - target: {fileID: 114000013157659074, guid: 378c3ed8547519b4a951d88c6e98b41c,
+        type: 2}
+      propertyPath: gracz
+      value: 
+      objectReference: {fileID: 1779629150}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 378c3ed8547519b4a951d88c6e98b41c, type: 2}
   m_IsPrefabParent: 0
@@ -435,6 +445,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 232a8ca9dde007a47814fb6fff1935b2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1224133188 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010785087988, guid: ea2f006a29695104f8a8b7ceadae9d8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 436858181}
 --- !u!1 &1301853139 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000013424388572, guid: 0b43a02d441882741a88c198a8a877ae,
@@ -527,6 +542,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000014013466740, guid: 0b43a02d441882741a88c198a8a877ae,
     type: 2}
   m_PrefabInternal: {fileID: 1958544587}
+--- !u!1 &1779629150 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010718700828, guid: 378c3ed8547519b4a951d88c6e98b41c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1012049818}
 --- !u!1001 &1958544587
 Prefab:
   m_ObjectHideFlags: 0

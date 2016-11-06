@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pilka: {fileID: 0}
   boisko: {fileID: 0}
-  gracz: {fileID: 1000010785087988}
+  gracz: {fileID: 0}
   isComputerPlayer: 0
 --- !u!136 &136000011804990854
 CapsuleCollider:

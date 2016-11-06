@@ -90,6 +90,17 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &53221137 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013584835500, guid: 232a8ca9dde007a47814fb6fff1935b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 862597126}
+--- !u!114 &53221140 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 862597126}
+  m_Script: {fileID: 11500000, guid: 8b40209b4622a6748ac818ccc5d62597, type: 3}
 --- !u!1 &53721421 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000013424388572, guid: 0b43a02d441882741a88c198a8a877ae,
@@ -134,6 +145,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010160880486, guid: b796daefd2f9eea4d87f1dbbebbba081,
+        type: 2}
+      propertyPath: pilka
+      value: 
+      objectReference: {fileID: 53221137}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b796daefd2f9eea4d87f1dbbebbba081, type: 2}
   m_IsPrefabParent: 0
@@ -208,6 +224,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &457762437 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010718700828, guid: 378c3ed8547519b4a951d88c6e98b41c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1442939378}
 --- !u!1001 &583929388
 Prefab:
   m_ObjectHideFlags: 0
@@ -305,14 +326,17 @@ Prefab:
         type: 2}
       propertyPath: pilka
       value: 
-      objectReference: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
-        type: 2}
+      objectReference: {fileID: 53221140}
     - target: {fileID: 114000011345525996, guid: ea2f006a29695104f8a8b7ceadae9d8a,
         type: 2}
       propertyPath: boisko
       value: 
-      objectReference: {fileID: 1000014013466740, guid: 0b43a02d441882741a88c198a8a877ae,
+      objectReference: {fileID: 1108355426}
+    - target: {fileID: 114000011345525996, guid: ea2f006a29695104f8a8b7ceadae9d8a,
         type: 2}
+      propertyPath: gracz
+      value: 
+      objectReference: {fileID: 1704261969}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea2f006a29695104f8a8b7ceadae9d8a, type: 2}
   m_IsPrefabParent: 0
@@ -499,14 +523,17 @@ Prefab:
         type: 2}
       propertyPath: boisko
       value: 
-      objectReference: {fileID: 1000014013466740, guid: 0b43a02d441882741a88c198a8a877ae,
-        type: 2}
+      objectReference: {fileID: 1108355426}
     - target: {fileID: 114000013157659074, guid: 378c3ed8547519b4a951d88c6e98b41c,
         type: 2}
       propertyPath: pilka
       value: 
-      objectReference: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
+      objectReference: {fileID: 53221140}
+    - target: {fileID: 114000013157659074, guid: 378c3ed8547519b4a951d88c6e98b41c,
         type: 2}
+      propertyPath: gracz
+      value: 
+      objectReference: {fileID: 457762437}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 378c3ed8547519b4a951d88c6e98b41c, type: 2}
   m_IsPrefabParent: 0
@@ -515,6 +542,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000010533422578, guid: 0b43a02d441882741a88c198a8a877ae,
     type: 2}
   m_PrefabInternal: {fileID: 1774070152}
+--- !u!1 &1704261969 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010785087988, guid: ea2f006a29695104f8a8b7ceadae9d8a,
+    type: 2}
+  m_PrefabInternal: {fileID: 708181312}
 --- !u!1001 &1774070152
 Prefab:
   m_ObjectHideFlags: 0
