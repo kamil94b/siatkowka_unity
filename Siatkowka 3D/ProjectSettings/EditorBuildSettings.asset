@@ -6,8 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Start.unity
-  - enabled: 1
     path: Assets/Scenes/main.unity
   - enabled: 1
     path: Assets/Scenes/arena.unity
@@ -15,3 +13,9 @@ EditorBuildSettings:
     path: Assets/Scenes/plaza.unity
   - enabled: 1
     path: Assets/Scenes/wyspa.unity
+  - enabled: 1
+    path: Assets/Scenes/arena_multi.unity
+  - enabled: 1
+    path: Assets/Scenes/plaza_multi.unity
+  - enabled: 1
+    path: Assets/Scenes/wyspa_multi.unity

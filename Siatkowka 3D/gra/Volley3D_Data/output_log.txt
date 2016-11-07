@@ -1,0 +1,38 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     880 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.054 seconds
+Platform assembly: E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\Programowanie\Unity\Team\siatkowka_unity\Siatkowka 3D\gra\Volley3D_Data\Managed\System.dll (this message is harmless)
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.700222 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1658 -> priority: 1 
+  Thread -> id: bec -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.710479 ms
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2051.
+Total: 0.839707 ms (FindLiveObjects: 0.111028 ms CreateObjectMapping: 0.038719 ms MarkObjects: 0.287366 ms  DeleteObjects: 0.401660 ms)
+

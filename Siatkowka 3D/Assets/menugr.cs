@@ -45,7 +45,8 @@ public class menugr : MonoBehaviour {
 					escEvent ();
 					break;
 				case 1:
-					////
+                    Time.timeScale = 1;
+                    Application.LoadLevel(0);
 					break;
 				case 2:
 					Application.Quit ();
