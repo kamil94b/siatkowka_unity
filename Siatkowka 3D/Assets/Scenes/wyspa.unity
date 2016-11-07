@@ -537,11 +537,7 @@ Prefab:
         type: 2}
       propertyPath: boisko
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1550398765}
-=======
       objectReference: {fileID: 670329400}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011345525996, guid: ea2f006a29695104f8a8b7ceadae9d8a,
         type: 2}
       propertyPath: gracz
@@ -904,11 +900,7 @@ Prefab:
         type: 2}
       propertyPath: boisko
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1550398765}
-=======
       objectReference: {fileID: 670329400}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000013157659074, guid: 378c3ed8547519b4a951d88c6e98b41c,
         type: 2}
       propertyPath: gracz
@@ -979,7 +971,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
   m_RootOrder: 5
 --- !u!1 &1155356891
 GameObject:
@@ -1066,9 +1057,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1155356891}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
-=======
-  m_RootOrder: 3
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
 --- !u!1001 &1178499851
 Prefab:
   m_ObjectHideFlags: 0
@@ -1112,101 +1100,57 @@ Prefab:
         type: 2}
       propertyPath: boisko
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1550398765}
-=======
       objectReference: {fileID: 670329400}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: wynik_P1
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 246293600}
-=======
       objectReference: {fileID: 930053977}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: wynik_P2
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1562853763}
-=======
       objectReference: {fileID: 631498487}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: wynik_P1w
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1780428795}
-=======
       objectReference: {fileID: 414324087}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: wynik_P2w
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1037479213}
-=======
       objectReference: {fileID: 1686444864}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: set_P1w
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 2114270055}
-=======
       objectReference: {fileID: 1493477886}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: set_P2w
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1345366012}
-=======
       objectReference: {fileID: 537995791}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: set_P2
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 701410472}
-=======
       objectReference: {fileID: 1930567504}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: set_P1
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 985476339}
-=======
       objectReference: {fileID: 301992921}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: wynik2
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1765576670}
-=======
       objectReference: {fileID: 957077139}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     - target: {fileID: 114000011165082064, guid: 232a8ca9dde007a47814fb6fff1935b2,
         type: 2}
       propertyPath: wynik1
       value: 
-<<<<<<< HEAD:Siatkowka 3D/Assets/Scenes/wyspa.unity
-      objectReference: {fileID: 1037029104}
-=======
       objectReference: {fileID: 851916618}
->>>>>>> e497248cd32170e52f9ac36cef760a4e5a0c046b:Siatkowka 3D/Assets/wyspa.unity
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 232a8ca9dde007a47814fb6fff1935b2, type: 2}
   m_IsPrefabParent: 0
